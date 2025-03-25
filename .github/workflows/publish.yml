@@ -1,0 +1,36 @@
+name: Build macOS App
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      # Step 3: Install Dependencies
+      - name: Install Dependencies
+        run: |
+          npm install
+
+      # Step 4: Build the App
+      - name: Build Electron App
+        run: |
+          npm run dist
+
+      # Step 5: Upload the macOS .dmg Artifact
+      - name: Upload macOS Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: macOS-build
+          path: dist/*.dmg
