@@ -36,7 +36,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: "v1.2.1"
-          name: 1.2.1"  # Use version from pyproject.toml as release title
+          name: 1.2.1  # Use version from pyproject.toml as release title
           prerelease: false  # Mark as a pre-release (beta)
           files: |
             dist/*.dmg
