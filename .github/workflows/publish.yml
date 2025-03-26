@@ -36,9 +36,9 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: "v1.2.1"
-          name: 1.2.1  # Use version from pyproject.toml as release title
-          prerelease: false  # Mark as a pre-release (beta)
+          name: "1.2.1"
+          prerelease: false  # Mark as latest
           files: |
-            *.app
+            dist/*
         env:
-            GITHUB_TOKEN: ${{ secrets.GH_PAT }}  # GitHub token for authentication
+            GITHUB_TOKEN: ${{ secrets.GH_PAT }}
