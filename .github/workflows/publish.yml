@@ -39,6 +39,6 @@ jobs:
           name: 1.2.1  # Use version from pyproject.toml as release title
           prerelease: false  # Mark as a pre-release (beta)
           files: |
-            dist/*.dmg
+            dist/*
         env:
             GITHUB_TOKEN: ${{ secrets.GH_PAT }}  # GitHub token for authentication
