@@ -22,7 +22,7 @@
       "output": "dist"
     },
     "mac": {
-      "target": "dmg"
+      "target": "dir"
     }
   },
   "dependencies": {},
